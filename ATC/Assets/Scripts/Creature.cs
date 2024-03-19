@@ -48,7 +48,7 @@ using UnityEngine;
     [SerializeField] string creatureName = "Circle";
     [SerializeField] private GameObject body;
     
-    //[SerializeField] private List<AnimationStateChanger> animationStateChangers;
+    [SerializeField] private List<AnimationStateChanger> animationStateChangers;
 
     [Header("Tracked Data")]
     [SerializeField] Vector3 homePosition = Vector3.zero;
@@ -103,7 +103,51 @@ using UnityEngine;
         else if(movementType == CreatureMovementType.physics){
             MoveCreatureRb(direction);
         }
+/*
+        //set animation
+        if (direction.x != 0){
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Walk");
+            }
+        }else{
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Idle");
+            }
+        }*/
 
+        //set animation
+        /*if (direction.x != 0){
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Walk");
+            }
+        } else if (rb.velocity.y > 0){
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Jump");
+            }
+        }
+        else{
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Idle");
+            }
+        }*/
+
+
+        if (rb.velocity.y > 0){
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Jump");
+        
+            }
+        } else if (direction.x != 0){
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Walk");
+            }
+        }
+        else{
+            foreach(AnimationStateChanger asc in animationStateChangers){
+                asc.ChangeAnimationState("Idle");
+            }
+        }
+        
     }
 
     public void MoveCreatureRb(Vector3 direction)
@@ -111,9 +155,9 @@ using UnityEngine;
         Vector3 currentVelocity = new Vector3(0, rb.velocity.y, 0);
         rb.velocity = (currentVelocity) + (direction * speed);
         if(rb.velocity.x < 0){
-            body.transform.localScale = new Vector3(-1,1,1);
-        }else if(rb.velocity.x > 0){
             body.transform.localScale = new Vector3(1,1,1);
+        }else if(rb.velocity.x > 0){
+            body.transform.localScale = new Vector3(-1,1,1);
         }
         //rb.AddForce(direction * speed);
         //rb.MovePosition(transform.position + (direction * speed * Time.deltaTime))
@@ -124,7 +168,6 @@ using UnityEngine;
         if(Physics2D.OverlapCircleAll(transform.position + new Vector3(0,jumpOffset,0),jumpRadius,groundMask).Length > 0){
             rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
         }
-
     }
 
     public void MoveCreatureTransform(Vector3 direction)
