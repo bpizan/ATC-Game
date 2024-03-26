@@ -132,7 +132,7 @@ using UnityEngine;
         }*/
 
 
-        if (rb.velocity.y > 0){
+        if (rb.velocity.y > 2){
             foreach(AnimationStateChanger asc in animationStateChangers){
                 asc.ChangeAnimationState("Jump");
         
@@ -174,10 +174,5 @@ using UnityEngine;
     {
         transform.position += direction * Time.deltaTime * speed;
  
-    }
-
-    public void PickupCoin(){
-        CoinCounter.singleton.RegisterCoin();
-        GetComponent<AudioSource>().Play();
     }
 }
