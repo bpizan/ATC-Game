@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EggSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject eggPrefab;
+    [SerializeField] private List<GameObject> eggs; // List of egg prefabs
     [SerializeField] private float spawnRange = 10;
+    [SerializeField] private float spawnInterval = 1; // [seconds]
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,26 +20,33 @@ public class EggSpawner : MonoBehaviour
 
     }
 
-    void SpawnEggs(){
+    void SpawnEggs()
+    {
         StartCoroutine(SpawnEggsRoutine());
-        IEnumerator SpawnEggsRoutine(){
-            while(true){
-                yield return new WaitForSeconds(1);
-                SpawnEggRandom();
-            }
+    }
+
+    IEnumerator SpawnEggsRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnInterval);
+            SpawnEggRandom();
         }
     }
 
+    void SpawnEggRandom()
+    {
+        // Choose a random egg from the list
+        int randomIndex = Random.Range(0, eggs.Count);
+        GameObject selectedEggPrefab = eggs[randomIndex];
 
+        float randomX = Random.Range(-spawnRange, spawnRange);
+        float spawnY = transform.position.y + spawnRange; // Spawn from the top
+        Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
 
-
-    void SpawnEggRandom(){
-
-       float randomX = Random.Range(-spawnRange,spawnRange);
-       float randomY = Random.Range(-spawnRange,spawnRange);
-
-       GameObject newEgg = Instantiate(eggPrefab,new Vector3(randomX,randomY,0),Quaternion.identity);
-       Destroy(newEgg,10);
-       newEgg.transform.eulerAngles = new Vector3(0,0,45);
+        // Instantiate the selected egg prefab
+        GameObject newEgg = Instantiate(selectedEggPrefab, spawnPosition, Quaternion.identity);
+        Destroy(newEgg, 10);
+        newEgg.transform.eulerAngles = new Vector3(0, 0, 45);
     }
 }

@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 2644391012421884529}
   - component: {fileID: 7804766615647265227}
   - component: {fileID: 7259919942441465042}
+  - component: {fileID: 2794020910193444208}
+  - component: {fileID: 8519256847618281918}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -178,7 +180,7 @@ MonoBehaviour:
     m_Bits: 64
   jumpOffset: -0.5
   jumpRadius: 0.25
-  creatureName: Circle
+  creatureName: PlayerCreature
   body: {fileID: 2566766239060639538}
   animationStateChangers:
   - {fileID: 5161284197657931096}
@@ -209,7 +211,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &7259919942441465042
 CapsuleCollider2D:
@@ -246,3 +248,44 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.0027079582}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &2794020910193444208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868890668631492914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71d3e575b5cdd84397405b54e863793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEggPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EggCounter, Assembly-CSharp
+        m_MethodName: RegisterEgg
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8519256847618281918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868890668631492914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db82016ed17fb5746bccf442a546482d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 881687459535377503, guid: ef8c07742eec3ad4f9257328c043f807, type: 3}
+  speed: 10

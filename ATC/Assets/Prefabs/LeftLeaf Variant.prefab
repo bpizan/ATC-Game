@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4379281752487772558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1179485652660191310, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Name
+      value: LeftLeaf Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127576187104453670, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.43352127
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127576187104453670, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.56143594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127576187104453670, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127576187104453670, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08223081
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127576187104453670, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.21928203
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661319037668816884, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009611828419466406, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009611828419466406, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f73c987f25288fa4287216993b01f417, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1179485652660191310, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6699110186993092289}
+  m_SourcePrefab: {fileID: 100100000, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+--- !u!1 &3213329873029906880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1179485652660191310, guid: 76fbc690ea610bd428aba00b70cedc1c, type: 3}
+  m_PrefabInstance: {fileID: 4379281752487772558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!68 &6699110186993092289
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213329873029906880}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.25853753, y: 0.18780422}
+  - {x: -0.13825083, y: 0.073106766}
+  - {x: -0.05192852, y: -0.0011639595}
+  - {x: 0.013326645, y: -0.050326705}
+  - {x: 0.1317854, y: -0.07712114}
+  - {x: 0.20888758, y: -0.06686747}
+  - {x: 0.27725077, y: -0.08662474}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

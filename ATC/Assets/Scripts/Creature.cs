@@ -33,8 +33,8 @@ using UnityEngine;
     [SerializeField] int health = 3;
     
     [SerializeField] int stamina = 3;
-    [SerializeField] float speed = 0f;
-    [SerializeField] float jumpForce = 10;
+    [SerializeField] public float speed = 0f;
+    [SerializeField] public float jumpForce = 10;
 
     public enum CreatureMovementType { tf , physics };
     [SerializeField] CreatureMovementType movementType = CreatureMovementType.tf;
@@ -46,14 +46,14 @@ using UnityEngine;
 
     [Header("Flavor")]
     [SerializeField] string creatureName = "Circle";
-    [SerializeField] private GameObject body;
+    [SerializeField] public GameObject body;
     
     [SerializeField] private List<AnimationStateChanger> animationStateChangers;
 
     [Header("Tracked Data")]
     [SerializeField] Vector3 homePosition = Vector3.zero;
     [SerializeField] CreatureSO creatureSO;
-
+    bool jumping;
     Rigidbody2D rb;
 
 
@@ -130,25 +130,31 @@ using UnityEngine;
                 asc.ChangeAnimationState("Idle");
             }
         }*/
-
-
-        if (rb.velocity.y > 2){
+        if (rb.velocity.y > 1 && jumping){
             foreach(AnimationStateChanger asc in animationStateChangers){
-                asc.ChangeAnimationState("Jump");
-        
+                asc.ChangeAnimationState("Jump");  
             }
         } else if (direction.x != 0){
             foreach(AnimationStateChanger asc in animationStateChangers){
                 asc.ChangeAnimationState("Walk");
+                jumping = false;
             }
-        }
-        else{
+        } else{
             foreach(AnimationStateChanger asc in animationStateChangers){
                 asc.ChangeAnimationState("Idle");
             }
         }
         
     }
+
+
+    public void MoveCreatureToward(Vector3 target){
+            Vector3 direction = target - transform.position;
+            MoveCreature(direction.normalized);
+        }
+    public void Stop(){
+            MoveCreature(Vector3.zero);
+        }
 
     public void MoveCreatureRb(Vector3 direction)
     {
@@ -167,6 +173,10 @@ using UnityEngine;
     {
         if(Physics2D.OverlapCircleAll(transform.position + new Vector3(0,jumpOffset,0),jumpRadius,groundMask).Length > 0){
             rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            jumping = true;
+        }
+        if(rb.velocity.y < 0){
+            jumping = false;
         }
     }
 

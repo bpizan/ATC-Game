@@ -6,26 +6,13 @@ public class SmoothFollow : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
-    [SerializeField] float smoothSpeed = 5;
-    // Start is called before the first frame update
+    [SerializeField] float smoothSpeed = 0.125f; // Adjusted for smoother transition
 
-    void Awake(){
-
-    }
-
-    void Start()
-    {
-
-    }
-
-
-
-    // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         Vector3 desiredPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position,desiredPosition,smoothSpeed*Time.deltaTime);
-        //transform.position = target.transform.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        transform.position = smoothedPosition;
     }
 
     public void AssignTarget(Transform newTarget){
