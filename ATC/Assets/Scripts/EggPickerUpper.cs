@@ -25,7 +25,7 @@ public class EggPickerUpper : MonoBehaviour
         if(other.GetComponent<Egg>() != null){
             onEggPickup.Invoke();
             //myPickupEvent.Invoke(42); //this is how we can pass along data to functions, select the dynamic option if doing so through inspector
-            //GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             Destroy(other.gameObject);
         }
     }

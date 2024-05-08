@@ -7,7 +7,7 @@ public class CheckpointSystem : MonoBehaviour
     public static CheckpointSystem singleton;
     [SerializeField] GameObject player;
 
-    [SerializeField] List<GameObject> checkpoints;
+    [SerializeField] public List<GameObject> checkpoints;
     // Start is called before the first frame update
     void Awake(){
         
